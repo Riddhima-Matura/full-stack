@@ -1,0 +1,122 @@
+/* Sidebar container */
+.sidebar {
+    /* width: 250px; */
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 320px; /* adjust as needed */
+    height: 100vh;
+    background-color: #fafafa;
+    border-right: 1px solid #e0e0e0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+    list-style: none;
+    margin: 0;
+    margin-right: 0px;
+    overflow-y: scroll;
+    z-index: 1000; /* keep it above other content */
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    padding-top: 20px;
+  }
+  /* */
+  .sidebar ul {
+    list-style-type: none; /* Removes the dots */
+    padding-left: 7px; /* Optional: removes default indentation */
+    margin: 10px; /* Optional: removes default margin */
+  }
+  
+  /* Shared link styles */
+  .menu-link,
+  .submenu-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .menu-link:hover,
+  .submenu-link:hover {
+    background-color: #d0e7ff;
+    color: #0d47a1 !important;
+  }
+  
+  .menu-link:hover mat-icon,
+  .submenu-link:hover mat-icon {
+    color: #0d47a1 !important;
+  }
+  
+  /* Active link */
+  .active-link {
+    background-color: #135496;
+    color: white !important;
+  }
+  
+  .active-link mat-icon {
+    color: white !important;
+  }
+  
+  /* Icon styling */
+  .menu-icon,
+  .submenu-icon {
+    font-size: 22px;
+    color: #666;
+    transition: color 0.3s;
+  }
+  
+  /* Menu with children */
+  .menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: #333;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .menu-item:hover {
+    background-color: #d0e7ff;
+    color: #0d47a1;
+  }
+  
+  .menu-item:hover mat-icon {
+    color: #0d47a1;
+  }
+  
+  .menu-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .expand-icon {
+    font-size: 20px;
+    color: #999;
+    transition: transform 0.3s;
+  }
+  
+  /* Submenu */
+  .submenu {
+    list-style: none;
+    padding-left: 40px;
+    margin: 6px 0 12px;
+  }
+  
+  .submenu-link {
+    font-size: 14px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 6px;
+    color: #444;
+  }
+  

@@ -1,0 +1,21 @@
+<div class="card mb-4 p-3 shadow-sm border rounded bg-light">
+
+  <div class="level-buttons">
+    <button [class.active]="selectedLevel === 'Beginner'" (click)="selectLevel('Beginner')">Beginner</button>
+    <button [class.active]="selectedLevel === 'Intermediate'"
+      (click)="selectLevel('Intermediate')">Intermediate</button>
+    <button [class.active]="selectedLevel === 'Advanced'" (click)="selectLevel('Advanced')">Advanced</button>
+  </div>
+
+  <div class="question-list">
+    <h3>{{ selectedLevel }} Questions</h3>
+    <div *ngFor="let q of questions" class="question-card">
+      <h4>{{ q.question }}</h4>
+      <p><strong>Short Answer:</strong> {{ q.short_answer }}</p>
+      <details>
+        <summary>Show Detailed Answer</summary>
+        <p>{{ q.detailed_answer }}</p>
+      </details>
+    </div>
+  </div>
+</div>

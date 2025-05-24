@@ -1,0 +1,21 @@
+<div class="login-container">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <h2>Login</h2>
+
+    <label for="username">Username</label>
+    <input id="username" type="text" formControlName="username" />
+
+    <label for="password">Password</label>
+    <input id="password" type="password" formControlName="password" />
+
+    <!-- <div class="captcha-container">
+      <span class="captcha">{{ captcha }}</span>
+      <button type="button" (click)="generateNewCaptcha()">⟳</button>
+    </div> -->
+
+    <!-- <label for="captchaInput">Enter Captcha</label>
+    <input id="captchaInput" type="text" formControlName="captchaInput" /> -->
+
+    <button type="submit">Login</button>
+  </form>
+</div>

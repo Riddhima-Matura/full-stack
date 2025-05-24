@@ -1,0 +1,31 @@
+<div class="card mb-4 p-3 shadow-sm border rounded bg-light">
+  <div class="row">
+    <div class="col-lg-6 col-6">
+      <div class="card">
+        <div class="card-body">
+          <!-- <apx-chart [series]="chartSeries" [chart]="chartOptions.chart!" [labels]="chartOptions.labels!"
+          [legend]="chartOptions.legend!" [title]="chartOptions.title!" [responsive]="chartOptions.responsive!">
+        </apx-chart> -->
+          <apx-chart [series]="chartOptions.series!" [chart]="chartOptions.chart!" [labels]="chartOptions.labels!"
+            [responsive]="chartOptions.responsive!" [colors]="chartOptions.colors!"
+            [dataLabels]="chartOptions.dataLabels!" [legend]="chartOptions.legend!" [states]="chartOptions.states!"
+            [tooltip]="chartOptions.tooltip!" [title]="chartOptions.title!"></apx-chart>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-lg-6 col-6">
+      <div class="card">
+        <div class="card-body">
+          <apx-chart [series]="UsersTopicChartOption.series!" [chart]="UsersTopicChartOption.chart!"
+            [labels]="UsersTopicChartOption.labels!" [responsive]="UsersTopicChartOption.responsive!"
+            [colors]="UsersTopicChartOption.colors!" [dataLabels]="UsersTopicChartOption.dataLabels!"
+            [legend]="UsersTopicChartOption.legend!" [states]="UsersTopicChartOption.states!"
+            [tooltip]="UsersTopicChartOption.tooltip!" [title]="UsersTopicChartOption.title!"></apx-chart>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,49 @@
+.modal.right {
+  transition: transform 0.3s ease-out;
+  transform: translateX(100%);
+}
+
+.modal.right.show {
+  transform: translateX(-1);
+}
+
+.bg-clr{
+  background-color: #2e5d7c;
+  border-radius: 10px;
+}
+
+.card{
+  height: 100vh;
+}
+
+.label{
+  font-weight: 500;
+}
+
+/* .actionLinks li {
+  margin: 0 3px;
+}
+.actionLinks .moreLink{
+  display:block;
+  outline:none;
+  border-radius:4px;
+  border:1px solid #d5d5da;
+  width:24px;
+  height:24px;
+  padding:3px;
+  color: inherit;
+  cursor:pointer;
+  position:relative;
+}
+.actionLinks .moreLink .mat-icon{
+  font-size:16px;
+}
+a{
+  text-decoration:none;
+} */
+li{
+  list-style: none;
+}
+.actionLinks{
+  display: flex;
+}

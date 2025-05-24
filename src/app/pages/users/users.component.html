@@ -1,0 +1,115 @@
+<!-- Header -->
+<!-- Header with Add Button -->
+<div class="card mb-4 p-3 shadow-sm border rounded bg-light">
+  <div class="d-flex justify-content-between align-items-center p-2 bg-clr text-white">
+    <ngx-spinner name="dataTableLoader" [fullScreen]="false" type="ball-clip-rotate-pulse" size="medium"></ngx-spinner>
+    <h3 class="m-0">User List</h3>
+    <button class="btn btn-light text-primary" (click)="openForm()"> Add</button>
+  </div>
+
+  <!-- User Table -->
+  <div class="p-3">
+    <table class="table table-bordered table-striped text-center">
+      <thead class="table-light">
+        <tr>
+          <th>S.No</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Gender</th>
+          <th>Topic</th>
+          <th>Contact No</th>
+          <th>Email</th>
+          <th>State</th>
+          <th>District</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of userData; let i=index">
+          <td>{{i+1}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.age}}</td>
+          <td>{{user.gender}}</td>
+          <td>{{user.topic}}</td>
+          <td>{{user.contact}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.state}}</td>
+          <td>{{user.district}}</td>
+          <td>
+            <ul class="actionLinks">
+              <li>
+                <a class="text-success"><mat-icon>edit_outline</mat-icon></a>
+              </li>
+              <li>
+                <a class="text-danger" (click)="delete(user.id)"><mat-icon>delete</mat-icon></a>
+              </li>
+            </ul>
+          </td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Slide-in Modal -->
+<div class="modal right fade" tabindex="-1" [ngClass]="{ show: showForm }"
+  [ngStyle]="{ display: showForm ? 'block' : 'none' }"
+  style="position: fixed; top: 0; right: 0; height: 100vh; width: 100%; max-width: 50%; background-color: white; z-index: 1050; overflow-y: auto;">
+  <div class="modal-header border-bottom">
+    <h5 class="modal-title">Add User</h5>
+    <button type="button" class="btn-close" aria-label="Close" (click)="closeForm()"></button>
+  </div>
+
+  <div class="modal-body p-4">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="row g-3">
+      <div class="col-md-6">
+        <label class="label">Name</label>
+        <input formControlName="name" class="form-control" placeholder="Name" />
+      </div>
+      <div class="col-md-6">
+        <label class="label">Age</label>
+        <input formControlName="age" type="number" class="form-control" placeholder="Age" />
+      </div>
+      <div class="col-md-6">
+        <label class="label">Gender</label>
+        <select formControlName="gender" class="form-select">
+          <option value="">Select Gender</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <label class="label">ContactNo</label>
+        <input formControlName="contactNo" class="form-control" placeholder="Contact No" />
+      </div>
+      <div class="col-md-6">
+        <label class="label">Topic</label>
+        <select formControlName="topic" class="form-select">
+          <option value="">Select Topic</option>
+          <option *ngFor="let topic of topics" [value]="topic.id">{{topic.value}}</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <label class="label">Email</label>
+        <input formControlName="email" type="email" class="form-control" placeholder="Email" />
+      </div>
+      <div class="col-md-6">
+        <label class="label">State</label>
+        <input formControlName="state" class="form-control" placeholder="State" />
+      </div>
+      <div class="col-md-6">
+        <label class="label">District</label>
+        <input formControlName="district" class="form-control" placeholder="District" />
+      </div>
+     
+        <div class="col-3 text-center">
+          <!-- <button type="text" class="btn btn-primary w-100" (click)="closeForm()">Cancel</button> -->
+          <button type="submit" class="btn btn-primary w-100">Submit</button>
+        </div>
+      
+      
+    </form>
+  </div>
+</div>

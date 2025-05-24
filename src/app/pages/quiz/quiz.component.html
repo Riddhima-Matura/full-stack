@@ -1,0 +1,31 @@
+<div class="card mb-4 p-3 shadow-sm border rounded bg-light">
+<div *ngIf="!submitted" >
+  <form (submit)="submitQuiz()">
+    <div *ngFor="let q of questions; let i = index" class="question-block">
+      <p><strong>Q{{ i + 1 }}:</strong> {{ q.question_text }}</p>
+
+      <label>
+        <input type="radio" name="q{{i}}" (change)="selectAnswer(i, 'A')"> {{ q.option_a }}
+      </label><br>
+      <label>
+        <input type="radio" name="q{{i}}" (change)="selectAnswer(i, 'B')"> {{ q.option_b }}
+      </label><br>
+      <label>
+        <input type="radio" name="q{{i}}" (change)="selectAnswer(i, 'C')"> {{ q.option_c }}
+      </label><br>
+      <label>
+        <input type="radio" name="q{{i}}" (change)="selectAnswer(i, 'D')"> {{ q.option_d }}
+      </label><br>
+
+      <hr>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Submit Quiz</button>
+  </form>
+</div>
+
+<div *ngIf="submitted" >
+  <h2>You scored {{ score }} out of {{ questions.length }}</h2>
+  <button class="btn btn-primary"  (click)="restart()">Restart</button>
+</div>
+</div>
